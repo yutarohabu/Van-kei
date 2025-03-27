@@ -1,0 +1,8 @@
+.card{
+    width: calc(33.333% - 10px);
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+}
