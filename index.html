@@ -18,7 +18,7 @@
     <script>
     function checkOrientation() {
       let warning = document.getElementById("rotate-warning");
-      if (window.innerWidth < 414 && window.matchMedia("(orientation: portrait)").matches) {
+      if (window.innerWidth < 720 && window.matchMedia("(orientation: portrait)").matches) {
         warning.style.display = "block";
       } else {
         warning.style.display = "none";

@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <h1>VanK(beta)</h1>
+      <h1>Van-Kei</h1>
       <div className="card">
         <Cards />
       </div>
