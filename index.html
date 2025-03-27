@@ -9,5 +9,25 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- スマホの時は横画面で使用する様促す -->
+    <div id="rotate-warning" class="alert">
+      <p class="alert_text">画面を横向きにしてください</p>
+    </div>
+    
+    <script>
+    function checkOrientation() {
+      let warning = document.getElementById("rotate-warning");
+      if (window.innerWidth < 414 && window.matchMedia("(orientation: portrait)").matches) {
+        warning.style.display = "block";
+      } else {
+        warning.style.display = "none";
+      }
+    }
+    
+    window.addEventListener("resize", checkOrientation);
+    window.addEventListener("load", checkOrientation);
+    </script>
+
   </body>
 </html>
