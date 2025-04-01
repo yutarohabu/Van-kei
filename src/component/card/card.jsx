@@ -1,9 +1,14 @@
-import { useState } from 'react'
+import { useState, useEffect  } from 'react'
 import styles from './card.module.css'
 
-export const Card = () => {
-    console.log('card component throw')
+export const Card = ({ reset }) => {
     const [power, setPower] = useState(0)
+    
+    useEffect(() => {
+        if (reset) {
+            setPower(0);
+        }
+    }, [reset]);
 
     return(
         <div className={styles.card}>
@@ -17,9 +22,6 @@ export const Card = () => {
                 <button onClick={() => setPower((count) => count - 1000)}>
                 -1k
                 </button>
-                {/* <button onClick={() => setPower(0)}>
-                reset
-                </button> */}
             </div>
             <p onClick={() => setPower(0)}>{power}</p>
         </div>

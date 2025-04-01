@@ -2,7 +2,6 @@ import styles from "./e_counter.module.css"
 import { useState } from "react"
 
 export const E_counter = () => {
-    console.log('e_counter component throw')
     const [ene, setEne] = useState(0)
 
     return(

@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <h1>Van-Kei</h1>
+      {/* <h1>Van-Kei</h1> */}
       <div className="contents">
         <E_counter />
         <div className="card">
