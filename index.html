@@ -16,17 +16,17 @@
     </div>
     
     <script>
-    function checkOrientation() {
-      let warning = document.getElementById("rotate-warning");
-      if (window.innerWidth < 720 && window.matchMedia("(orientation: portrait)").matches) {
-        warning.style.display = "block";
-      } else {
-        warning.style.display = "none";
+      function checkOrientation() {
+        let warning = document.getElementById("rotate-warning");
+        if (window.innerWidth < 720 && window.matchMedia("(orientation: portrait)").matches) {
+          warning.style.display = "block";
+        } else {
+          warning.style.display = "none";
+        }
       }
-    }
     
-    window.addEventListener("resize", checkOrientation);
-    window.addEventListener("load", checkOrientation);
+      window.addEventListener("resize", checkOrientation);
+      window.addEventListener("load", checkOrientation);
     </script>
 
   </body>
