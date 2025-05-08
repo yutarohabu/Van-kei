@@ -34,7 +34,7 @@
 
 .contents{
   display: flex;
-  padding: 2rem;
+  margin: 0 2rem;
 }
 
 .card {
