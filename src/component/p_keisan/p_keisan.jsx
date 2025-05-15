@@ -2,32 +2,35 @@ import styles from "./p_keisan.module.css"
 import { useState } from "react"
 
 export const P_keisan = ({show, setShow}) => {
-    console.log('modal component')
 
     const [num1, setNum1] = useState("")
     const [num2, setNum2] = useState("")
-    const [result, setResult] = useState(null)
 
     const handleCloseModal = () => {
         setShow(false)
         setNum1('')
         setNum2('')
-        setResult('')
     }
 
     if(show){
-        console.log('modal show')
-
-        const handleCalculate = () => {
-          const diff = Number(num1) - Number(num2) + 5000
-          setResult(diff);
-        };
+        const diffKeisan =() => {
+            let diff = Number(num1) - Number(num2)
+            console.log(diff)
+            let hasu = diff%5000
+            console.log(hasu)
+            if(hasu>0){
+                diff = diff - hasu + 5000
+                console.log(diff)
+            }else{
+                diff = diff + 5000
+            }
+            return(diff)
+        }
 
         return(
         <>
             <div className={styles.overlay}>
                 <div className={styles.modal}>
-                    {/* <p>これがモーダルウィンドウです。</p> */}
                     <input
                         type="number"
                         placeholder="攻"
@@ -40,8 +43,7 @@ export const P_keisan = ({show, setShow}) => {
                         value={num2}
                         onChange={(e) => setNum2(e.target.value)}
                     ></input>
-                    <button onClick={handleCalculate}>計算</button>
-                    <p>要求値: {result}</p>
+                    <p>要求値: {diffKeisan()}</p>
                     <button onClick={() => handleCloseModal()}>close</button>
                 </div>
             </div>
